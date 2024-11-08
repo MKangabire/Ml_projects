@@ -31,24 +31,40 @@ class _PredictionPageState extends State<PredictionPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ML Prediction Demo'),
+        title: Text('Phone prediction tool'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Enter Input:',
-              style: TextStyle(fontSize: 18),
-            ),
-            SizedBox(height: 10),
-            TextField(
-              controller: _inputController,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Enter some data',
-              ),
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 10),
+                // First label and TextField
+                Text(
+                  'Enter Phone Model',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+                TextField(
+                  controller: _inputController,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'e.g., iPhone 16',
+                  ),
+                ),
+                SizedBox(height: 20),
+                // Second label and TextField
+                Text(
+                  'Enter RAM Size',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+                TextField(
+                  controller: _inputController,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'e.g., 8GB',
+                  ),
+                ),
+              ],
             ),
             SizedBox(height: 20),
             ElevatedButton(
